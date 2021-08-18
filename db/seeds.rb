@@ -4,12 +4,11 @@ puts "Database cleaned!"
 
 puts "Creating restaurants"
 
-100.times do
+50.times do
   restaurant = Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
-    rating: rand(1..5),
-    chef_name: Faker::Music::RockBand.name
+    category: ["chinese", "italian", "japanese", "french", "belgian"].sample
   )
   puts "Restaurant #{restaurant.name} has been created!"
 end
